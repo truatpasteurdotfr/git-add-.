@@ -9,7 +9,7 @@ touch /etc/default/google-chrome
 
 dnf -y install \
 	libglvnd-glx \
-	mesa-dri-drivers 
+	mesa-dri-drivers \
 	https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm  && \
 dnf clean packages
 
