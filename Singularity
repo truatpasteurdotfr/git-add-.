@@ -1,5 +1,5 @@
-Bootstrap: docker
-From: quay.io/centos/centos:stream8
+Bootstrap: oras
+From: ghcr.io/truatpasteurdotfr/singularity-docker-stream8-ci:latest
 
 %post
 dnf -y update && dnf -y upgrade
@@ -12,8 +12,6 @@ dnf -y install \
 	mesa-dri-drivers \
 	https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm  && \
 dnf clean packages
-
-
 
 %runscript
 google-chrome  --no-sandbox "$@"
