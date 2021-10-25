@@ -41,12 +41,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      # Extract metadata (tags, labels) for Docker
+      # https://github.com/docker/metadata-action
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
       - name: Continue if Singularity Recipe Exists
         run: |
           if [[ -f "${{ matrix.recipe }}" ]]; then
             echo "keepgoing=true" >> $GITHUB_ENV
           fi          
-
 
       - name: Build Container
         if: ${{ env.keepgoing == 'true' }}
