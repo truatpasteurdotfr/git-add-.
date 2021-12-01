@@ -12,7 +12,7 @@ Tru <tru@pasteur.fr>
 ## Caveat
 - playground, use at your own risk!
 
-## Running without installation:
+## Running without installation: [![Singularity build](https://github.com/truatpasteurdotfr/singularity-docker-stream8-chrome/actions/workflows/singularity-publish.yml/badge.svg)](https://github.com/truatpasteurdotfr/singularity-docker-stream8-chrome/actions/workflows/singularity-publish.yml)
 ```
 singularity run  -B /run oras://ghcr.io/truatpasteurdotfr/singularity-docker-stream8-chrome:latest
 ```
